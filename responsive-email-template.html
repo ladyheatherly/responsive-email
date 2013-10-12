@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<style type="text/css">
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		RESET STYLES
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	body {
+		margin:0;
+		min-width:100%;
+		padding:0;
+		width:100% !important;
+		-webkit-text-size-adjust:none;
+		-ms-text-size-adjust:none;
+	}	/* min-width:100% fixes iOS viewport bug */
+		/* -webkit-text-size-adjust:none prevents font-size increase on iOS and Android devices */
+		/* -ms-text-size-adjust:none prevents font-size increase on Windows mobile devices */
+
+	table {
+		border:none;
+		border-collapse:collapse;
+		mso-table-lspace:0pt;
+		mso-table-rspace:0pt;
+	}	/* These styles will zero out unwanted spacing on table elements */
+
+	td {
+		border-collapse:collapse;
+		margin:0;
+		padding:0;
+		vertical-align:top;
+	}	/* Set default font styles on td elements to avoid redundancy */
+
+	img {
+		border:none;
+		height:auto;
+		outline:none;
+		text-decoration:none;
+		-ms-interpolation-mode:bicubic;
+	}	/* -ms-interpolation-mode:bicubic fixes pixelization of fluid images in IE */
+
+	a img {
+		border:none;
+	}	/* Remove border around linked images */
+
+	.outlook-container-fix {
+		width:100%;
+	} /* Fixes unwanted vertical gap in in aligned multi-column tables */
+
+	.outlook-spacing-fix {
+		mso-table-lspace:0;
+		mso-table-rspace:0;
+	} /* Removes unwanted horizontal gap between aligned multi-column tables */
+
+	.image-fix {
+		display:block;
+	} /* Removes unwanted padding from adjacent or stacked images in Gmail */
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		BODY
+
+		* Set background color on the pseudo-body table; some clients strip out the <body> element
+		* Background images require a VML hack for Outlook 07/10/13; See emailbg.net
+		* Set font-family on the container <td>
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.body { background:#EEEEEE; height:100% !important; width:100% !important; }
+
+	.container { background:#FFFFFF; width:560px; }
+	.container td { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		STACKABLE TABLES
+
+		* Define table widths to avoid rendering issues in Outlook 07/10/13
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.preheader,
+	.header,
+	.main,
+	.footer,
+	.postfooter { width:560px; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		COLUMNS
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.one-column .content { width:540px; }
+	.one-column .gutter { padding:10px; }
+	.one-column .p { font-size:14px; line-height:20px; }
+	.one-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:308px; width:520px; }
+
+	.two-column .content { width:270px; }
+	.two-column .gutter { padding:10px; }
+	.two-column .p { font-size:14px; line-height:18px; }
+	.two-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:148px; width:250px; }
+
+	.three-column .content { width:180px; }
+	.three-column .gutter { padding:10px; }
+	.three-column .p { font-size:13px; line-height:16px; }
+	.three-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:107px; width:160px; }
+
+	.four-column .content { width:270px; } /* 2x2 in responsive layouts */
+	.four-column .gutter { padding:10px 10px 20px; }
+	.four-column .p { font-size:13px; line-height:16px; }
+	.four-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:68px; width:115px; }
+
+	.two-column-wide .content { width:405px; }
+	.two-column-narrow .content { width:135px; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		SPACERS
+
+		* Font-size required for any spacer <td> or <div> less than 15px high in Outlook 07/10/13
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.spacer-xl { height:40px; line-height:40px; }
+	.spacer-lg { height:30px; line-height:30px; }
+	.spacer-md { height:20px; line-height:20px; }
+	.spacer-sm { font-size:10px; height:10px; line-height:10px; }
+	.spacer-xs { font-size:5px; height:5px; line-height:10px; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		SECTIONS
+
+		* Button requires inline VML styles for Outlook 07/10/13 unles you use an image
+		* Images should have fallback styles for images-off mode
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.preheader td { color:#999; display:none; font-size:11px; line-height:30px; text-align:center; }
+
+	.header a { text-decoration:none; }
+	.header img { background:#CCCCCC; color:#FFFFFF; font-size:24px; font-weight:bold; height:100px; line-height:100px; width:560px; }
+
+	.main td { background:#FFFFFF; color:#333333; }
+	.main .cushion { padding:15px 10px; }
+
+	.main a { color:#999998; text-decoration:underline; }
+	.main a.button { background:#555555; border-radius:4px; color:#FFFFFF; display:inline-block; font-size:16px; font-weight:normal; line-height:45px; text-align:center; text-decoration:none; width:220px; }
+
+	.h1 { color:#555555; font-size:26px; font-weight:bold; line-height:26px; text-decoration:none; }
+	.h2 { color:#555555; font-size:21px; font-weight:bold; line-height:21px; text-decoration:none; }
+	.h3 { color:#555555; font-size:18px; font-weight:bold; line-height:18px; text-decoration:none; }
+	.h4 { color:#555555; font-size:14px; font-weight:bold; line-height:14px; text-decoration:none; }
+
+	.bulleted-list { width:100%; }
+	.bulleted-list .bullet { font-size:21px; line-height:20px; padding:0; width:16px; }
+	.bulleted-list .text { font-size:14px; line-height:20px; padding:0; }
+
+	.border { border-bottom:1px solid #DDDDDD; }
+
+	.footer td { background:#555555; color:#DDDDDD; }
+	.footer .cushion { padding:20px 10px; }
+	.footer .gutter { padding:10px; }
+	.footer a { color:#FFFFFF; }
+	.footer .sender { font-size:11px; font-weight:bold; line-height:18px; }
+	.footer .subscription { font-size:11px; line-height:14px; text-align:right; }
+	.footer .unsubscribe { font-size:11px; font-weight:bold; text-align:right; text-transform:uppercase; }
+	.footer .unsubscribe a { text-decoration:none; }
+	.footer .copyright { color:#DDDDDD; font-size:10px; }
+
+	.postfooter { display:none; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
+		RESPONSIVE
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	@media only screen and (max-width: 559px)
+
+	{
+
+		[class=body] {
+			padding:0 !important;
+		}
+
+		[class=container] {
+			width:100% !important;
+		}
+
+		[class=preheader],
+		[class=header],
+		[class=main],
+		[class=footer],
+		[class=postfooter] {
+			width:100% !important;
+		}
+
+		[class=one-column] [class=content],
+		[class=two-column] [class=content] {
+			display:block !important;
+			width:100% !important;
+		}
+
+		[class=three-column] [class=content] {
+			width:33% !important;
+		}
+
+		[class=four-column] [class=content] {
+			display:block !important;
+			width:100% !important;
+		}
+
+		[class=four-column] [class=gutter] {
+			padding: !important;
+		}
+
+		[class=two-column-wide] [class=content] {
+			width:75% !important;
+		}
+
+		[class=two-column-narrow] [class=content] {
+			width:25% !important;
+		}
+
+		[class=header] img,
+		[class=one-column] img,
+		[class=two-column] img,
+		[class=three-column] img,
+		[class=four-column] img,
+		[class=two-column-wide],
+		[class=two-column-narrow] {
+			width:100% !important;
+			height:auto !important;
+		}
+
+		[class=button] {
+			height:auto !important;
+			max-width:280px !important;
+			width:100% !important;
+		}
+
+		[class=subscription],
+		[class=unsubscribe] {
+			text-align:left !important;
+		}
+
+	}
+
+	</style>
+</head>
+
+
+
+
+<body topmargin="0" rightmargin="0" bottommargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+
+
+
+<!-- :::::::::::::::::::::::::
+	BODY
+:::::::::::::::::::::::::: -->
+<table border="0" cellpadding="0" cellspacing="0" class="body">
+	<tr>
+		<td>
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				CONTAINER
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="container">
+				<tr>
+					<td>
+
+
+
+
+						<!-- :::::::::::::::::::::::::
+							PREHEADER
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="preheader">
+							<tr>
+								<td>
+									Preheader text should be 50 characters or less.
+								</td>
+							</tr>
+						</table>
+
+
+
+
+						<!-- :::::::::::::::::::::::::
+							HEADER
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="header">
+							<tr>
+								<td>
+									<a href="#" target="_blank">
+										<img src="banner.gif" class="image-fix" alt="Alt text" />
+									</a>
+								</td>
+							</tr>
+						</table>
+
+
+
+
+						<!-- :::::::::::::::::::::::::
+							MAIN
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="main">
+							<tr class="border">
+								<td class="cushion">
+
+
+									<!-- :::::::::::::::::::::::::
+										 1-COLUMN
+									:::::::::::::::::::::::::: -->
+									<table border="0" cellpadding="0" cellspacing="0" class="one-column">
+										<tr>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<div class="h1">H1 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
+															<div class="spacer-md">&nbsp;</div>
+
+															<!-- :::::::::::::::::::::::::
+																 BUTTON
+																 See emailbtn.net
+															:::::::::::::::::::::::::: -->
+															<div>
+															<!--[if mso]>
+															<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
+																<w:anchorlock/>
+																	<center>
+															<![endif]-->
+																<a class="button" href="#" target="_blank">Lorem Ipsum</a>
+															<!--[if mso]>
+																	</center>
+															</v:roundrect>
+															<![endif]-->
+															</div>
+
+															<div class="spacer-md">&nbsp;</div>
+
+															<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
+																<tr>
+																	<td class="bullet">&bull;</td>
+																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+																</tr>
+																<tr>
+																	<td class="bullet">&bull;</td>
+																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+																</tr>
+																<tr>
+																	<td class="bullet">&bull;</td>
+																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+																</tr>
+															</table>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+										</tr>
+									</table>
+									<!-- :::::::::::::::::::::::::
+										 END 1-COLUMN
+									:::::::::::::::::::::::::: -->
+
+
+								</td>
+							</tr>
+							<tr class="border">
+								<td class="cushion">
+
+
+									<!-- :::::::::::::::::::::::::
+										 2-COLUMN
+									:::::::::::::::::::::::::: -->
+									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
+										<tr>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-two.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h2">H2 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-two.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h2">H2 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+										</tr>
+									</table>
+									<!-- :::::::::::::::::::::::::
+										 END 2-COLUMN
+									:::::::::::::::::::::::::: -->
+
+
+								</td>
+							</tr>
+							<tr class="border">
+								<td class="cushion">
+
+
+									<!-- :::::::::::::::::::::::::
+										 3-COLUMN
+									:::::::::::::::::::::::::: -->
+									<table border="0" cellpadding="0" cellspacing="0" class="three-column">
+										<tr>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-three.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H3 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-three.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H3 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-three.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H3 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+										</tr>
+									</table>
+									<!-- :::::::::::::::::::::::::
+										 END 3-COLUMN
+									:::::::::::::::::::::::::: -->
+
+
+								</td>
+							</tr>
+							<tr>
+								<td class="cushion">
+
+
+									<!-- :::::::::::::::::::::::::
+										 4-COLUMN
+									:::::::::::::::::::::::::: -->
+									<table border="0" cellpadding="0" cellspacing="0" class="four-column">
+										<tr>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-four.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H4 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+														</td>
+														<td class="gutter">
+
+															<img src="img-four.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H4 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<img src="img-four.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H4 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+														</td>
+														<td class="gutter">
+
+															<img src="img-four.gif" alt="" />
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="h3">H4 Header</div>
+															<div class="spacer-sm">&nbsp;</div>
+															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+										</tr>
+									</table>
+									<!-- :::::::::::::::::::::::::
+										 END 4-COLUMN
+									:::::::::::::::::::::::::: -->
+
+
+								</td>
+							</tr>
+						</table>
+						<!-- :::::::::::::::::::::::::
+							END - MAIN
+						:::::::::::::::::::::::::: -->
+
+
+
+
+						<!-- :::::::::::::::::::::::::
+							 FOOTER
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="footer">
+							<tr>
+								<td class="cushion">
+
+
+									<!-- :::::::::::::::::::::::::
+										 2-COLUMN
+									:::::::::::::::::::::::::: -->
+									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
+										<tr>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<div class="sender">
+															Sender Name<br />
+															Sender Address<br />
+															Los Angeles, CA 90000
+															</div>
+															<div class="spacer-md">&nbsp;</div>
+															<div class="copyright">Copyright &copy; 2013</div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+											<td class="content">
+
+												<table border="0" cellpadding="0" cellspacing="0">
+													<tr>
+														<td class="gutter">
+
+															<div class="subscription">
+															You received this email because you are a valued friend of UCLA.
+															If you do not want to receive future emails
+															from ::::::::::::::::::::::::::::,
+															simply unsubscribe.
+															</div>
+															<div class="spacer-md">&nbsp;</div>
+															<div class="unsubscribe"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
+
+														</td>
+													</tr>
+												</table>
+
+											</td>
+										</tr>
+									</table>
+
+
+								</td>
+							</tr>
+						</table>
+						<!-- :::::::::::::::::::::::::
+							 END - FOOTER
+						:::::::::::::::::::::::::: -->
+
+
+
+
+					</td>
+				</tr>
+			</table>
+			<!-- :::::::::::::::::::::::::
+				END - CONTAINER
+			:::::::::::::::::::::::::: -->
+
+
+
+
+		</td>
+	</tr>
+</table>
+<!-- :::::::::::::::::::::::::
+	END - BODY
+:::::::::::::::::::::::::: -->
+
+
+
+
+</body>
+</html>
