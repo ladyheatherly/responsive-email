@@ -68,13 +68,14 @@
 	-----------------------------------------------------------------------------------------------------------
 		BODY
 
-		* Set background color on the pseudo-body table; some clients strip out the <body> element
-		* Background images require a VML hack for Outlook 07/10/13; See emailbg.net
-		* Set font-family on the container <td>
+		- Set background color on the pseudo-body table; some clients strip out the body element
+		- Background images require a VML hack for Outlook 07/10/13; See emailbg.net
+		- Set font-family on the container td for global inheritance
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.body { background:#EEEEEE; height:100% !important; width:100% !important; }
+	.body { background:#EEEEEE; width:100% !important; }
+	.body-padding { padding:0 0 20px; }
 
 	.container { background:#FFFFFF; width:560px; }
 	.container td { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
@@ -85,7 +86,7 @@
 	-----------------------------------------------------------------------------------------------------------
 		STACKABLE TABLES
 
-		* Define table widths to avoid rendering issues in Outlook 07/10/13
+		- Define table widths to avoid rendering issues in Outlook 07/10/13
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
@@ -103,28 +104,28 @@
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.one-column .content { width:540px; }
+	.one-column .column { width:540px; }
 	.one-column .gutter { padding:10px; }
 	.one-column .p { font-size:14px; line-height:20px; }
 	.one-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:308px; width:520px; }
 
-	.two-column .content { width:270px; }
+	.two-column .column { width:270px; }
 	.two-column .gutter { padding:10px; }
 	.two-column .p { font-size:14px; line-height:18px; }
 	.two-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:148px; width:250px; }
 
-	.three-column .content { width:180px; }
+	.three-column .column { width:180px; }
 	.three-column .gutter { padding:10px; }
 	.three-column .p { font-size:13px; line-height:16px; }
 	.three-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:107px; width:160px; }
 
-	.four-column .content { width:270px; } /* 2x2 in responsive layouts */
+	.four-column .column { width:270px; }
 	.four-column .gutter { padding:10px 10px 20px; }
 	.four-column .p { font-size:13px; line-height:16px; }
 	.four-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:68px; width:115px; }
 
-	.two-column-wide .content { width:405px; }
-	.two-column-narrow .content { width:135px; }
+	.two-column-wide .column { width:405px; }
+	.two-column-narrow .column { width:135px; }
 
 
 
@@ -132,13 +133,13 @@
 	-----------------------------------------------------------------------------------------------------------
 		SPACERS
 
-		* Font-size required for any spacer <td> or <div> less than 15px high in Outlook 07/10/13
+		- Font-size required for any spacer td or div less than 15px high in Outlook 07/10/13
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.spacer-xl { height:40px; line-height:40px; }
-	.spacer-lg { height:30px; line-height:30px; }
-	.spacer-md { height:20px; line-height:20px; }
+	.spacer-xl { height:25px; line-height:25px; }
+	.spacer-lg { height:20px; line-height:20px; }
+	.spacer-md { height:15px; line-height:15px; }
 	.spacer-sm { font-size:10px; height:10px; line-height:10px; }
 	.spacer-xs { font-size:5px; height:5px; line-height:10px; }
 
@@ -148,41 +149,42 @@
 	-----------------------------------------------------------------------------------------------------------
 		SECTIONS
 
-		* Button requires inline VML styles for Outlook 07/10/13 unles you use an image
-		* Images should have fallback styles for images-off mode
+		- Button requires inline VML styles for Outlook 07/10/13 unless you use image buttons
+		- Images should have fallback styles for images-off mode
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.preheader td { color:#999; display:none; font-size:11px; line-height:30px; text-align:center; }
+	.preheader td { background:#EEEEEE; color:#999; display:none; font-size:11px; line-height:30px; text-align:center; }
 
 	.header a { text-decoration:none; }
 	.header img { background:#CCCCCC; color:#FFFFFF; font-size:24px; font-weight:bold; height:100px; line-height:100px; width:560px; }
 
 	.main td { background:#FFFFFF; color:#333333; }
-	.main .cushion { padding:15px 10px; }
+	.main .padding { padding:15px 10px; }
 
 	.main a { color:#999998; text-decoration:underline; }
-	.main a.button { background:#555555; border-radius:4px; color:#FFFFFF; display:inline-block; font-size:16px; font-weight:normal; line-height:45px; text-align:center; text-decoration:none; width:220px; }
 
-	.h1 { color:#555555; font-size:26px; font-weight:bold; line-height:26px; text-decoration:none; }
+	.button a { background:#555555; border-radius:4px; color:#FFFFFF; display:inline-block; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:16px; font-weight:normal; line-height:44px; text-align:center; text-decoration:none; width:220px; }
+
+	.h1 { color:#555555; font-size:24px; font-weight:bold; line-height:24px; text-decoration:none; }
 	.h2 { color:#555555; font-size:21px; font-weight:bold; line-height:21px; text-decoration:none; }
 	.h3 { color:#555555; font-size:18px; font-weight:bold; line-height:18px; text-decoration:none; }
-	.h4 { color:#555555; font-size:14px; font-weight:bold; line-height:14px; text-decoration:none; }
+	.h4 { color:#555555; font-size:16px; font-weight:bold; line-height:16px; text-decoration:none; }
 
 	.bulleted-list { width:100%; }
-	.bulleted-list .bullet { font-size:21px; line-height:20px; padding:0; width:16px; }
+	.bulleted-list .bullet { font-size:20px; line-height:20px; padding:0; width:16px; }
 	.bulleted-list .text { font-size:14px; line-height:20px; padding:0; }
 
 	.border { border-bottom:1px solid #DDDDDD; }
 
 	.footer td { background:#555555; color:#DDDDDD; }
-	.footer .cushion { padding:20px 10px; }
+	.footer .padding { padding:20px 10px; }
 	.footer .gutter { padding:10px; }
 	.footer a { color:#FFFFFF; }
-	.footer .sender { font-size:11px; font-weight:bold; line-height:18px; }
-	.footer .subscription { font-size:11px; line-height:14px; text-align:right; }
-	.footer .unsubscribe { font-size:11px; font-weight:bold; text-align:right; text-transform:uppercase; }
-	.footer .unsubscribe a { text-decoration:none; }
+	.footer .sender { font-size:11px; font-weight:bold; line-height:14px; }
+	.footer .unsubscribe-text { font-size:11px; line-height:14px; text-align:right; }
+	.footer .unsubscribe-link { font-size:11px; font-weight:bold; text-align:right; text-transform:uppercase; }
+	.footer .unsubscribe-link a { text-decoration:none; }
 	.footer .copyright { color:#DDDDDD; font-size:10px; }
 
 	.postfooter { display:none; }
@@ -192,12 +194,13 @@
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	-----------------------------------------------------------------------------------------------------------
 		RESPONSIVE
+
+		- Forbidden CSS properties float, margin, max-width will work on native iOS and Android clients
+		that support media queries
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	@media only screen and (max-width: 559px)
-
-	{
+	@media only screen and (max-width: 559px) {
 
 		[class=body] {
 			padding:0 !important;
@@ -215,17 +218,17 @@
 			width:100% !important;
 		}
 
-		[class=one-column] [class=content],
-		[class=two-column] [class=content] {
+		[class=one-column] [class=column],
+		[class=two-column] [class=column] {
 			display:block !important;
 			width:100% !important;
 		}
 
-		[class=three-column] [class=content] {
+		[class=three-column] [class=column] {
 			width:33% !important;
 		}
 
-		[class=four-column] [class=content] {
+		[class=four-column] [class=column] {
 			display:block !important;
 			width:100% !important;
 		}
@@ -234,11 +237,11 @@
 			padding: !important;
 		}
 
-		[class=two-column-wide] [class=content] {
+		[class=two-column-wide] [class=column] {
 			width:75% !important;
 		}
 
-		[class=two-column-narrow] [class=content] {
+		[class=two-column-narrow] [class=column] {
 			width:25% !important;
 		}
 
@@ -259,9 +262,36 @@
 			width:100% !important;
 		}
 
-		[class=subscription],
-		[class=unsubscribe] {
+		[class=unsubscribe-text],
+		[class=unsubscribe-link] {
 			text-align:left !important;
+		}
+
+	}
+
+	@media only screen and (max-width: 479px) {
+
+		[class=three-column] [class=column] {
+			display:block !important;
+			width:100% !important;
+		}
+
+		[class=three-column] img {
+			float:left !important;
+			max-width:160px !important;
+			width:37% !important;
+		}
+
+		[class=three-column] [class=spacer-sm] {
+			display:none !important;
+		}
+
+		[class=three-column] [class=h3] {
+			margin:0 0 10px 40% !important;
+		}
+
+		[class=three-column] [class=p] {
+			margin:0 0 10px 40% !important;
 		}
 
 	}
@@ -282,7 +312,7 @@
 :::::::::::::::::::::::::: -->
 <table border="0" cellpadding="0" cellspacing="0" class="body">
 	<tr>
-		<td>
+		<td class="body-padding">
 
 
 
@@ -318,7 +348,7 @@
 							<tr>
 								<td>
 									<a href="#" target="_blank">
-										<img src="banner.gif" class="image-fix" alt="Alt text" />
+										<img src="https://raw.github.com/ladyheatherly/responsive-email/master/banner.gif" class="image-fix" alt="Alt text" />
 									</a>
 								</td>
 							</tr>
@@ -331,8 +361,8 @@
 							MAIN
 						:::::::::::::::::::::::::: -->
 						<table border="0" cellpadding="0" cellspacing="0" class="main">
-							<tr class="border">
-								<td class="cushion">
+							<tr>
+								<td class="padding border">
 
 
 									<!-- :::::::::::::::::::::::::
@@ -340,7 +370,7 @@
 									:::::::::::::::::::::::::: -->
 									<table border="0" cellpadding="0" cellspacing="0" class="one-column">
 										<tr>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
@@ -349,26 +379,26 @@
 															<div class="h1">H1 Header</div>
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
-															<div class="spacer-md">&nbsp;</div>
+															<div class="spacer-lg">&nbsp;</div>
 
 															<!-- :::::::::::::::::::::::::
 																 BUTTON
 																 See emailbtn.net
 															:::::::::::::::::::::::::: -->
-															<div>
-															<!--[if mso]>
-															<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
-																<w:anchorlock/>
+															<div class="button">
+																<!--[if mso]>
+																<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
+																	<w:anchorlock/>
 																	<center>
-															<![endif]-->
-																<a class="button" href="#" target="_blank">Lorem Ipsum</a>
-															<!--[if mso]>
+																<![endif]-->
+																<a class="navy" href="#">Lorem Ipsum</a>
+																<!--[if mso]>
 																	</center>
-															</v:roundrect>
-															<![endif]-->
+																</v:roundrect>
+																<![endif]-->
 															</div>
 
-															<div class="spacer-md">&nbsp;</div>
+															<div class="spacer-lg">&nbsp;</div>
 
 															<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
 																<tr>
@@ -377,11 +407,11 @@
 																</tr>
 																<tr>
 																	<td class="bullet">&bull;</td>
-																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+																	<td class="text">Etiam tempor luctus dolor quis iaculis lacus tristique vitae</td>
 																</tr>
 																<tr>
 																	<td class="bullet">&bull;</td>
-																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+																	<td class="text">Suspendisse potenti integer lobortis blandit consequat</td>
 																</tr>
 															</table>
 
@@ -399,8 +429,8 @@
 
 								</td>
 							</tr>
-							<tr class="border">
-								<td class="cushion">
+							<tr>
+								<td class="padding border">
 
 
 									<!-- :::::::::::::::::::::::::
@@ -408,14 +438,14 @@
 									:::::::::::::::::::::::::: -->
 									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
 										<tr>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-two.gif" alt="" />
-															<div class="spacer-sm">&nbsp;</div>
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
+															<div class="spacer-md">&nbsp;</div>
 															<div class="h2">H2 Header</div>
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
@@ -425,14 +455,14 @@
 												</table>
 
 											</td>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-two.gif" alt="" />
-															<div class="spacer-sm">&nbsp;</div>
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
+															<div class="spacer-md">&nbsp;</div>
 															<div class="h2">H2 Header</div>
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
@@ -451,8 +481,8 @@
 
 								</td>
 							</tr>
-							<tr class="border">
-								<td class="cushion">
+							<tr>
+								<td class="padding border">
 
 
 									<!-- :::::::::::::::::::::::::
@@ -460,16 +490,16 @@
 									:::::::::::::::::::::::::: -->
 									<table border="0" cellpadding="0" cellspacing="0" class="three-column">
 										<tr>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-three.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="h3">H3 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 														</td>
@@ -477,16 +507,16 @@
 												</table>
 
 											</td>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-three.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="h3">H3 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 														</td>
@@ -494,16 +524,16 @@
 												</table>
 
 											</td>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-three.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
 															<div class="spacer-sm">&nbsp;</div>
 															<div class="h3">H3 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 														</td>
@@ -521,7 +551,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td class="cushion">
+								<td class="padding">
 
 
 									<!-- :::::::::::::::::::::::::
@@ -529,25 +559,25 @@
 									:::::::::::::::::::::::::: -->
 									<table border="0" cellpadding="0" cellspacing="0" class="four-column">
 										<tr>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-four.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
 															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H4 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="h4">H4 Header</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 														</td>
 														<td class="gutter">
 
-															<img src="img-four.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
 															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H4 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="h4">H4 Header</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 														</td>
@@ -555,25 +585,25 @@
 												</table>
 
 											</td>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<img src="img-four.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
 															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H4 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="h4">H4 Header</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 														</td>
 														<td class="gutter">
 
-															<img src="img-four.gif" alt="" />
+															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
 															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H4 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
+															<div class="h4">H4 Header</div>
+															<div class="spacer-xs">&nbsp;</div>
 															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 														</td>
@@ -603,7 +633,7 @@
 						:::::::::::::::::::::::::: -->
 						<table border="0" cellpadding="0" cellspacing="0" class="footer">
 							<tr>
-								<td class="cushion">
+								<td class="padding">
 
 
 									<!-- :::::::::::::::::::::::::
@@ -611,7 +641,7 @@
 									:::::::::::::::::::::::::: -->
 									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
 										<tr>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
@@ -630,20 +660,17 @@
 												</table>
 
 											</td>
-											<td class="content">
+											<td class="column">
 
 												<table border="0" cellpadding="0" cellspacing="0">
 													<tr>
 														<td class="gutter">
 
-															<div class="subscription">
-															You received this email because you are a valued friend of UCLA.
-															If you do not want to receive future emails
-															from ::::::::::::::::::::::::::::,
-															simply unsubscribe.
+															<div class="unsubscribe-text">
+															Unsubscribe message lorem ipsum dolor sit amet, consectetur adipiscing elit.
 															</div>
 															<div class="spacer-md">&nbsp;</div>
-															<div class="unsubscribe"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
+															<div class="unsubscribe-link"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
 
 														</td>
 													</tr>
