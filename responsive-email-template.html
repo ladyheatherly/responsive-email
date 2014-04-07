@@ -74,11 +74,8 @@
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.body { background:#EEEEEE; width:100% !important; }
+	.body { background:#EEEEEE; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; width:100% !important; }
 	.body-padding { padding:0 0 20px; }
-
-	.container { background:#FFFFFF; width:560px; }
-	.container td { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
 
 
 
@@ -203,7 +200,6 @@
 	@media only screen and (max-width: 559px) {
 
 		[class=body] { padding:0 !important; }
-		[class=container] { width:100% !important; }
 
 		[class=preheader],
 		[class=header],
@@ -266,384 +262,364 @@
 
 
 			<!-- :::::::::::::::::::::::::
-				CONTAINER
+				PREHEADER
 			:::::::::::::::::::::::::: -->
-			<table align="center" border="0" cellpadding="0" cellspacing="0" class="container">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="preheader">
 				<tr>
 					<td>
+						Preheader text should be 50 characters or less.
+					</td>
+				</tr>
+			</table>
 
 
+
+
+			<!-- :::::::::::::::::::::::::
+				HEADER
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="header">
+				<tr>
+					<td>
+						<a href="#" target="_blank">
+							<img src="https://raw.github.com/ladyheatherly/responsive-email/master/banner.gif" class="image-fix" alt="Alt text" />
+						</a>
+					</td>
+				</tr>
+			</table>
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				MAIN
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="main">
+				<tr>
+					<td class="padding border">
 
 
 						<!-- :::::::::::::::::::::::::
-							PREHEADER
+							 1-COLUMN
 						:::::::::::::::::::::::::: -->
-						<table border="0" cellpadding="0" cellspacing="0" class="preheader">
+						<table border="0" cellpadding="0" cellspacing="0" class="one-column">
 							<tr>
-								<td>
-									Preheader text should be 50 characters or less.
-								</td>
-							</tr>
-						</table>
+								<td class="column">
 
-
-
-
-						<!-- :::::::::::::::::::::::::
-							HEADER
-						:::::::::::::::::::::::::: -->
-						<table border="0" cellpadding="0" cellspacing="0" class="header">
-							<tr>
-								<td>
-									<a href="#" target="_blank">
-										<img src="https://raw.github.com/ladyheatherly/responsive-email/master/banner.gif" class="image-fix" alt="Alt text" />
-									</a>
-								</td>
-							</tr>
-						</table>
-
-
-
-
-						<!-- :::::::::::::::::::::::::
-							MAIN
-						:::::::::::::::::::::::::: -->
-						<table border="0" cellpadding="0" cellspacing="0" class="main">
-							<tr>
-								<td class="padding border">
-
-
-									<!-- :::::::::::::::::::::::::
-										 1-COLUMN
-									:::::::::::::::::::::::::: -->
-									<table border="0" cellpadding="0" cellspacing="0" class="one-column">
+									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="column">
+											<td class="gutter">
 
-												<table border="0" cellpadding="0" cellspacing="0">
+												<div class="h1">H1 Header</div>
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
+												<div class="spacer-lg">&nbsp;</div>
+
+												<!-- :::::::::::::::::::::::::
+													 BUTTON
+													 See http://buttons.cm/
+												:::::::::::::::::::::::::: -->
+												<div class="button">
+												<!--[if mso]>
+												<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
+												<w:anchorlock/>
+													<center>
+												<![endif]-->
+													<a href="#">Lorem Ipsum</a>
+												<!--[if mso]>
+													</center>
+												</v:roundrect>
+												<![endif]-->
+												</div>
+
+												<div class="spacer-lg">&nbsp;</div>
+
+												<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
 													<tr>
-														<td class="gutter">
-
-															<div class="h1">H1 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
-															<div class="spacer-lg">&nbsp;</div>
-
-															<!-- :::::::::::::::::::::::::
-																 BUTTON
-																 See http://buttons.cm/
-															:::::::::::::::::::::::::: -->
-															<div class="button">
-															<!--[if mso]>
-															<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
-															<w:anchorlock/>
-																<center>
-															<![endif]-->
-																<a href="#">Lorem Ipsum</a>
-															<!--[if mso]>
-																</center>
-															</v:roundrect>
-															<![endif]-->
-															</div>
-
-															<div class="spacer-lg">&nbsp;</div>
-
-															<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
-																<tr>
-																	<td class="bullet">&bull;</td>
-																	<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
-																</tr>
-																<tr>
-																	<td class="bullet">&bull;</td>
-																	<td class="text">Etiam tempor luctus dolor quis iaculis lacus tristique vitae</td>
-																</tr>
-																<tr>
-																	<td class="bullet">&bull;</td>
-																	<td class="text">Suspendisse potenti integer lobortis blandit consequat</td>
-																</tr>
-															</table>
-
-														</td>
+														<td class="bullet">&bull;</td>
+														<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+													</tr>
+													<tr>
+														<td class="bullet">&bull;</td>
+														<td class="text">Etiam tempor luctus dolor quis iaculis lacus tristique vitae</td>
+													</tr>
+													<tr>
+														<td class="bullet">&bull;</td>
+														<td class="text">Suspendisse potenti integer lobortis blandit consequat</td>
 													</tr>
 												</table>
 
 											</td>
 										</tr>
 									</table>
-									<!-- :::::::::::::::::::::::::
-										 END 1-COLUMN
-									:::::::::::::::::::::::::: -->
-
-
-								</td>
-							</tr>
-							<tr>
-								<td class="padding border">
-
-
-									<!-- :::::::::::::::::::::::::
-										 2-COLUMN
-									:::::::::::::::::::::::::: -->
-									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
-										<tr>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
-															<div class="spacer-md">&nbsp;</div>
-															<div class="h2">H2 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
-															<div class="spacer-md">&nbsp;</div>
-															<div class="h2">H2 Header</div>
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-										</tr>
-									</table>
-									<!-- :::::::::::::::::::::::::
-										 END 2-COLUMN
-									:::::::::::::::::::::::::: -->
-
-
-								</td>
-							</tr>
-							<tr>
-								<td class="padding border">
-
-
-									<!-- :::::::::::::::::::::::::
-										 3-COLUMN
-									:::::::::::::::::::::::::: -->
-									<table border="0" cellpadding="0" cellspacing="0" class="three-column">
-										<tr>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H3 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H3 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h3">H3 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-										</tr>
-									</table>
-									<!-- :::::::::::::::::::::::::
-										 END 3-COLUMN
-									:::::::::::::::::::::::::: -->
-
-
-								</td>
-							</tr>
-							<tr>
-								<td class="padding">
-
-
-									<!-- :::::::::::::::::::::::::
-										 4-COLUMN
-									:::::::::::::::::::::::::: -->
-									<table border="0" cellpadding="0" cellspacing="0" class="four-column">
-										<tr>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h4">H4 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-														</td>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h4">H4 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h4">H4 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-														</td>
-														<td class="gutter">
-
-															<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
-															<div class="spacer-sm">&nbsp;</div>
-															<div class="h4">H4 Header</div>
-															<div class="spacer-xs">&nbsp;</div>
-															<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-										</tr>
-									</table>
-									<!-- :::::::::::::::::::::::::
-										 END 4-COLUMN
-									:::::::::::::::::::::::::: -->
-
 
 								</td>
 							</tr>
 						</table>
 						<!-- :::::::::::::::::::::::::
-							END - MAIN
+							 END 1-COLUMN
 						:::::::::::::::::::::::::: -->
 
 
+					</td>
+				</tr>
+				<tr>
+					<td class="padding border">
 
 
 						<!-- :::::::::::::::::::::::::
-							 FOOTER
+							 2-COLUMN
 						:::::::::::::::::::::::::: -->
-						<table border="0" cellpadding="0" cellspacing="0" class="footer">
+						<table border="0" cellpadding="0" cellspacing="0" class="two-column">
 							<tr>
-								<td class="padding">
+								<td class="column">
 
-
-									<!-- :::::::::::::::::::::::::
-										 2-COLUMN
-									:::::::::::::::::::::::::: -->
-									<table border="0" cellpadding="0" cellspacing="0" class="two-column">
+									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="column">
+											<td class="gutter">
 
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<div class="sender">
-															Sender Name<br />
-															Sender Address<br />
-															Los Angeles, CA 90000
-															</div>
-															<div class="spacer-md">&nbsp;</div>
-															<div class="copyright">Copyright &copy; 2013</div>
-
-														</td>
-													</tr>
-												</table>
-
-											</td>
-											<td class="column">
-
-												<table border="0" cellpadding="0" cellspacing="0">
-													<tr>
-														<td class="gutter">
-
-															<div class="unsubscribe-text">
-															Unsubscribe message lorem ipsum dolor sit amet, consectetur adipiscing elit.
-															</div>
-															<div class="spacer-md">&nbsp;</div>
-															<div class="unsubscribe-link"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
-
-														</td>
-													</tr>
-												</table>
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
+												<div class="spacer-md">&nbsp;</div>
+												<div class="h2">H2 Header</div>
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
 
 											</td>
 										</tr>
 									</table>
 
+								</td>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
+												<div class="spacer-md">&nbsp;</div>
+												<div class="h2">H2 Header</div>
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
+
+											</td>
+										</tr>
+									</table>
 
 								</td>
 							</tr>
 						</table>
 						<!-- :::::::::::::::::::::::::
-							 END - FOOTER
+							 END 2-COLUMN
 						:::::::::::::::::::::::::: -->
 
 
+					</td>
+				</tr>
+				<tr>
+					<td class="padding border">
+
+
+						<!-- :::::::::::::::::::::::::
+							 3-COLUMN
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="three-column">
+							<tr>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h3">H3 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h3">H3 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h3">H3 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+							</tr>
+						</table>
+						<!-- :::::::::::::::::::::::::
+							 END 3-COLUMN
+						:::::::::::::::::::::::::: -->
+
+
+					</td>
+				</tr>
+				<tr>
+					<td class="padding">
+
+
+						<!-- :::::::::::::::::::::::::
+							 4-COLUMN
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="four-column">
+							<tr>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h4">H4 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+											</td>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h4">H4 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h4">H4 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+											</td>
+											<td class="gutter">
+
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<div class="spacer-sm">&nbsp;</div>
+												<div class="h4">H4 Header</div>
+												<div class="spacer-xs">&nbsp;</div>
+												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+							</tr>
+						</table>
+						<!-- :::::::::::::::::::::::::
+							 END 4-COLUMN
+						:::::::::::::::::::::::::: -->
 
 
 					</td>
 				</tr>
 			</table>
 			<!-- :::::::::::::::::::::::::
-				END - CONTAINER
+				END - MAIN
+			:::::::::::::::::::::::::: -->
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				 FOOTER
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="footer">
+				<tr>
+					<td class="padding">
+
+
+						<!-- :::::::::::::::::::::::::
+							 2-COLUMN
+						:::::::::::::::::::::::::: -->
+						<table border="0" cellpadding="0" cellspacing="0" class="two-column">
+							<tr>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<div class="sender">
+												Sender Name<br />
+												Sender Address<br />
+												Los Angeles, CA 90000
+												</div>
+												<div class="spacer-md">&nbsp;</div>
+												<div class="copyright">Copyright &copy; 2013</div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+								<td class="column">
+
+									<table border="0" cellpadding="0" cellspacing="0">
+										<tr>
+											<td class="gutter">
+
+												<div class="unsubscribe-text">
+												Unsubscribe message lorem ipsum dolor sit amet, consectetur adipiscing elit.
+												</div>
+												<div class="spacer-md">&nbsp;</div>
+												<div class="unsubscribe-link"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
+
+											</td>
+										</tr>
+									</table>
+
+								</td>
+							</tr>
+						</table>
+
+
+					</td>
+				</tr>
+			</table>
+			<!-- :::::::::::::::::::::::::
+				 END - FOOTER
 			:::::::::::::::::::::::::: -->
 
 
