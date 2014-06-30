@@ -74,8 +74,9 @@
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.body { background:#EEEEEE; font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; width:100% !important; }
-	.body-padding { padding:0 0 20px; }
+	body, .body { background:#EEEEEE; width:100% !important; }
+
+	td { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
 
 
 
@@ -97,32 +98,73 @@
 
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	-----------------------------------------------------------------------------------------------------------
+		TABLE STYLES
+
+		- Button requires inline VML styles for Outlook 07/10/13 unless you use image buttons
+		- Images should have fallback styles for images-off mode
+	-----------------------------------------------------------------------------------------------------------
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+	.preheader td { background:#EEEEEE; color:#EEEEEE; display:none; font-size:1px; line-height:1px; text-align:center; }
+
+	.header a { text-decoration:none; }
+	.header img { background:#CCCCCC; color:#FFFFFF; font-size:24px; font-weight:bold; height:100px; line-height:100px; text-align:center; width:560px; }
+
+	.main td { background:#FFFFFF; color:#333333; }
+	.main .padding { border-bottom:1px solid #dddddd; padding:15px 10px; }
+
+	.main a { color:#999998; text-decoration:underline; }
+
+	.button a { background-color:#555555; border-radius:4px; color:#ffffff; display:inline-block; font-family:sans-serif; font-size:14px; font-weight:bold; line-height:44px; text-align:center; text-decoration:none; width:220px; -webkit-text-size-adjust:none; }
+
+	.h1 { color:#555555; font-size:24px; font-weight:bold; line-height:24px; text-decoration:none; }
+	.h2 { color:#555555; font-size:21px; font-weight:bold; line-height:21px; text-decoration:none; }
+	.h3 { color:#555555; font-size:18px; font-weight:bold; line-height:18px; text-decoration:none; }
+	.h4 { color:#555555; font-size:16px; font-weight:bold; line-height:16px; text-decoration:none; }
+	.h5 { color:#555555; font-size:15px; font-weight:bold; line-height:16px; text-decoration:none; }
+	.h6 { color:#555555; font-size:14px; font-weight:bold; line-height:16px; text-decoration:none; }
+
+	.bulleted-list { width:100%; }
+	.bulleted-list .bullet { font-size:20px; line-height:20px; padding:0; width:16px; }
+	.bulleted-list .text { font-size:14px; line-height:20px; padding:0; }
+
+	.border { border-bottom:1px solid #DDDDDD; font-size:1px; line-height:1px; }
+
+	.footer td { background:#DDDDDD; color:#333333; }
+	.footer .padding { padding:20px 10px; }
+	.footer a { color:#666666; }
+	.footer .sender { font-size:11px; font-weight:bold; line-height:14px; }
+	.footer .unsubscribe-text { font-size:11px; line-height:14px; text-align:right; }
+	.footer .unsubscribe-link { font-size:11px; font-weight:bold; text-align:right; text-transform:uppercase; }
+	.footer .unsubscribe-link a { text-decoration:none; }
+	.footer .copyright { color:#666666; font-size:10px; }
+
+	.postfooter { display:none; }
+
+
+
+	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-----------------------------------------------------------------------------------------------------------
 		COLUMNS
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
-	.one-column .column { width:540px; }
-	.one-column .gutter { padding:10px; }
+	.one-column .column { padding:10px; width:520px; }
 	.one-column .p { font-size:14px; line-height:20px; }
-	.one-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:308px; width:520px; }
+	.one-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:310px; width:520px; }
 
-	.two-column .column { width:270px; }
-	.two-column .gutter { padding:10px; }
+	.two-column .column { padding:10px; width:250px; }
 	.two-column .p { font-size:14px; line-height:18px; }
-	.two-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:148px; width:250px; }
+	.two-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:147px; width:250px; }
 
-	.three-column .column { width:180px; }
-	.three-column .gutter { padding:10px; }
+	.three-column .column { padding:10px; width:160px; }
 	.three-column .p { font-size:13px; line-height:16px; }
-	.three-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:107px; width:160px; }
+	.three-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:110px; width:160px; }
 
 	.four-column .column { width:270px; }
-	.four-column .gutter { padding:10px 10px 20px; }
+	.four-column .column td { padding:10px; width:115px; }
 	.four-column .p { font-size:13px; line-height:16px; }
-	.four-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:68px; width:115px; }
-
-	.two-column-wide .column { width:405px; }
-	.two-column-narrow .column { width:135px; }
+	.four-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:66px; width:115px; }
 
 
 
@@ -144,52 +186,6 @@
 
 	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	-----------------------------------------------------------------------------------------------------------
-		SECTIONS
-
-		- Button requires inline VML styles for Outlook 07/10/13 unless you use image buttons
-		- Images should have fallback styles for images-off mode
-	-----------------------------------------------------------------------------------------------------------
-	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
-
-	.preheader td { background:#EEEEEE; color:#999; display:none; font-size:11px; line-height:30px; text-align:center; }
-
-	.header a { text-decoration:none; }
-	.header img { background:#CCCCCC; color:#FFFFFF; font-size:24px; font-weight:bold; height:100px; line-height:100px; width:560px; }
-
-	.main td { background:#FFFFFF; color:#333333; }
-	.main .padding { padding:15px 10px; }
-
-	.main a { color:#999998; text-decoration:underline; }
-
-	.button a { background-color:#555555; border-radius:4px; color:#ffffff; display:inline-block; font-family:sans-serif; font-size:14px; font-weight:bold; line-height:44px; text-align:center; text-decoration:none; width:220px; -webkit-text-size-adjust:none; }
-
-	.h1 { color:#555555; font-size:24px; font-weight:bold; line-height:24px; text-decoration:none; }
-	.h2 { color:#555555; font-size:21px; font-weight:bold; line-height:21px; text-decoration:none; }
-	.h3 { color:#555555; font-size:18px; font-weight:bold; line-height:18px; text-decoration:none; }
-	.h4 { color:#555555; font-size:16px; font-weight:bold; line-height:16px; text-decoration:none; }
-
-	.bulleted-list { width:100%; }
-	.bulleted-list .bullet { font-size:20px; line-height:20px; padding:0; width:16px; }
-	.bulleted-list .text { font-size:14px; line-height:20px; padding:0; }
-
-	.border { border-bottom:1px solid #DDDDDD; }
-
-	.footer td { background:#555555; color:#DDDDDD; }
-	.footer .padding { padding:20px 10px; }
-	.footer .gutter { padding:10px; }
-	.footer a { color:#FFFFFF; }
-	.footer .sender { font-size:11px; font-weight:bold; line-height:14px; }
-	.footer .unsubscribe-text { font-size:11px; line-height:14px; text-align:right; }
-	.footer .unsubscribe-link { font-size:11px; font-weight:bold; text-align:right; text-transform:uppercase; }
-	.footer .unsubscribe-link a { text-decoration:none; }
-	.footer .copyright { color:#DDDDDD; font-size:10px; }
-
-	.postfooter { display:none; }
-
-
-
-	/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-	-----------------------------------------------------------------------------------------------------------
 		RESPONSIVE
 
 		- Forbidden CSS properties float, margin, max-width will work on native iOS and Android clients
@@ -198,9 +194,6 @@
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
 	@media only screen and (max-width: 559px) {
-
-		[class=body-padding] { padding:0 !important; }
-
 		[class=preheader],
 		[class=header],
 		[class=main],
@@ -208,36 +201,29 @@
 		[class=postfooter] { width:100% !important; }
 
 		[class=one-column] [class=column],
-		[class=two-column] [class=column] { display:block !important; width:100% !important; }
-		[class=three-column] [class=column] { width:33% !important; }
+		[class=two-column] [class=column] { display:block !important; padding:2% !important; width:96% !important; }
+		[class=three-column] [class=column] { padding:2% !important; width:29% !important; }
 		[class=four-column] [class=column] { display:block !important; width:100% !important; }
-		[class=four-column] [class=gutter] { padding: !important; }
-		[class=two-column-wide] [class=column] { width:75% !important; }
-		[class=two-column-narrow] [class=column] { width:25% !important; }
+		[class=four-column] [class=column] td { padding:0 !important; padding:2% !important; width:46% !important; }
 
 		[class=header] img,
 		[class=one-column] img,
 		[class=two-column] img,
 		[class=three-column] img,
-		[class=four-column] img,
-		[class=two-column-wide],
-		[class=two-column-narrow] { width:100% !important; height:auto !important; }
+		[class=four-column] img { width:100% !important; height:auto !important; }
 
 		[class=button] a { height:auto !important; max-width:280px !important; width:100% !important; }
 
 		[class=unsubscribe-text],
 		[class=unsubscribe-link] { text-align:left !important; }
-
 	}
 
 	@media only screen and (max-width: 479px) {
-
-		[class=three-column] [class=column] { display:block !important; width:100% !important; }
+		[class=three-column] [class=column] { display:block !important; width:96% !important; }
 		[class=three-column] img { float:left !important; max-width:160px !important; width:37% !important; }
 		[class=three-column] [class=spacer-sm] { display:none !important; }
 		[class=three-column] [class=h3] { margin:0 0 10px 40% !important; }
 		[class=three-column] [class=p] { margin:0 0 10px 40% !important; }
-
 	}
 
 	</style>
@@ -296,7 +282,7 @@
 			:::::::::::::::::::::::::: -->
 			<table align="center" border="0" cellpadding="0" cellspacing="0" class="main">
 				<tr>
-					<td class="padding border">
+					<td class="padding">
 
 
 						<!-- :::::::::::::::::::::::::
@@ -306,50 +292,42 @@
 							<tr>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
+									<div class="h1">H1 Header</div>
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
+									<div class="spacer-lg">&nbsp;</div>
+
+									<!-- :::::::::::::::::::::::::
+										 BUTTON
+										 See http://buttons.cm/
+									:::::::::::::::::::::::::: -->
+									<div class="button">
+									<!--[if mso]>
+									<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
+									<w:anchorlock/>
+										<center>
+									<![endif]-->
+										<a href="#">Lorem Ipsum</a>
+									<!--[if mso]>
+										</center>
+									</v:roundrect>
+									<![endif]-->
+									</div>
+
+									<div class="spacer-lg">&nbsp;</div>
+
+									<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
 										<tr>
-											<td class="gutter">
-
-												<div class="h1">H1 Header</div>
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat. Nunc risus dui, molestie nec pellentesque nec, molestie et nunc. Fusce iaculis urna quis orci porttitor non viverra nisi laoreet.</div>
-												<div class="spacer-lg">&nbsp;</div>
-
-												<!-- :::::::::::::::::::::::::
-													 BUTTON
-													 See http://buttons.cm/
-												:::::::::::::::::::::::::: -->
-												<div class="button">
-												<!--[if mso]>
-												<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:44px;v-text-anchor:middle;width:220px;" arcsize="10%" stroke="f" fillcolor="#555555">
-												<w:anchorlock/>
-													<center>
-												<![endif]-->
-													<a href="#">Lorem Ipsum</a>
-												<!--[if mso]>
-													</center>
-												</v:roundrect>
-												<![endif]-->
-												</div>
-
-												<div class="spacer-lg">&nbsp;</div>
-
-												<table border="0" cellpadding="0" cellspacing="0" class="bulleted-list">
-													<tr>
-														<td class="bullet">&bull;</td>
-														<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
-													</tr>
-													<tr>
-														<td class="bullet">&bull;</td>
-														<td class="text">Etiam tempor luctus dolor quis iaculis lacus tristique vitae</td>
-													</tr>
-													<tr>
-														<td class="bullet">&bull;</td>
-														<td class="text">Suspendisse potenti integer lobortis blandit consequat</td>
-													</tr>
-												</table>
-
-											</td>
+											<td class="bullet">&bull;</td>
+											<td class="text">Lorem ipsum dolor sit amet consectetur adipiscing</td>
+										</tr>
+										<tr>
+											<td class="bullet">&bull;</td>
+											<td class="text">Etiam tempor luctus dolor quis iaculis lacus tristique vitae</td>
+										</tr>
+										<tr>
+											<td class="bullet">&bull;</td>
+											<td class="text">Suspendisse potenti integer lobortis blandit consequat</td>
 										</tr>
 									</table>
 
@@ -363,8 +341,20 @@
 
 					</td>
 				</tr>
+			</table>
+			<!-- :::::::::::::::::::::::::
+				END - MAIN
+			:::::::::::::::::::::::::: -->
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				MAIN
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="main">
 				<tr>
-					<td class="padding border">
+					<td class="padding">
 
 
 						<!-- :::::::::::::::::::::::::
@@ -374,36 +364,20 @@
 							<tr>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
-												<div class="spacer-md">&nbsp;</div>
-												<div class="h2">H2 Header</div>
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
-
-											</td>
-										</tr>
-									</table>
+									<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-2-column.gif" alt="" height="148" width="250" />
+									<div class="spacer-md">&nbsp;</div>
+									<div class="h2">H2 Header</div>
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
 
 								</td>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-two.gif" alt="" height="148" width="250" />
-												<div class="spacer-md">&nbsp;</div>
-												<div class="h2">H2 Header</div>
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
-
-											</td>
-										</tr>
-									</table>
+									<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-2-column.gif" alt="" height="148" width="250" />
+									<div class="spacer-md">&nbsp;</div>
+									<div class="h2">H2 Header</div>
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae. Suspendisse potenti. Integer lobortis blandit consequat.</div>
 
 								</td>
 							</tr>
@@ -415,8 +389,20 @@
 
 					</td>
 				</tr>
+			</table>
+			<!-- :::::::::::::::::::::::::
+				END - MAIN
+			:::::::::::::::::::::::::: -->
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				MAIN
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="main">
 				<tr>
-					<td class="padding border">
+					<td class="padding">
 
 
 						<!-- :::::::::::::::::::::::::
@@ -426,53 +412,29 @@
 							<tr>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="h3">H3 Header</div>
-												<div class="spacer-xs">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-											</td>
-										</tr>
-									</table>
+									<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-3-column.gif" alt="" height="107" width="160" />
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="h3">H3 Header</div>
+									<div class="spacer-xs">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 								</td>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="h3">H3 Header</div>
-												<div class="spacer-xs">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-											</td>
-										</tr>
-									</table>
+									<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-3-column.gif" alt="" height="107" width="160" />
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="h3">H3 Header</div>
+									<div class="spacer-xs">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 								</td>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-three.gif" alt="" height="107" width="160" />
-												<div class="spacer-sm">&nbsp;</div>
-												<div class="h3">H3 Header</div>
-												<div class="spacer-xs">&nbsp;</div>
-												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
-
-											</td>
-										</tr>
-									</table>
+									<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-3-column.gif" alt="" height="107" width="160" />
+									<div class="spacer-sm">&nbsp;</div>
+									<div class="h3">H3 Header</div>
+									<div class="spacer-xs">&nbsp;</div>
+									<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor luctus dolor, quis iaculis lacus tristique vitae.</div>
 
 								</td>
 							</tr>
@@ -484,6 +446,18 @@
 
 					</td>
 				</tr>
+			</table>
+			<!-- :::::::::::::::::::::::::
+				END - MAIN
+			:::::::::::::::::::::::::: -->
+
+
+
+
+			<!-- :::::::::::::::::::::::::
+				MAIN
+			:::::::::::::::::::::::::: -->
+			<table align="center" border="0" cellpadding="0" cellspacing="0" class="main">
 				<tr>
 					<td class="padding">
 
@@ -497,23 +471,21 @@
 
 									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+											<td>
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-4-column.gif" alt="" height="68" width="115" />
 												<div class="spacer-sm">&nbsp;</div>
 												<div class="h4">H4 Header</div>
 												<div class="spacer-xs">&nbsp;</div>
 												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 											</td>
-											<td class="gutter">
+											<td>
 
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-4-column.gif" alt="" height="68" width="115" />
 												<div class="spacer-sm">&nbsp;</div>
 												<div class="h4">H4 Header</div>
 												<div class="spacer-xs">&nbsp;</div>
 												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
 											</td>
 										</tr>
 									</table>
@@ -523,23 +495,21 @@
 
 									<table border="0" cellpadding="0" cellspacing="0">
 										<tr>
-											<td class="gutter">
-
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+											<td>
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-4-column.gif" alt="" height="68" width="115" />
 												<div class="spacer-sm">&nbsp;</div>
 												<div class="h4">H4 Header</div>
 												<div class="spacer-xs">&nbsp;</div>
 												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
 
 											</td>
-											<td class="gutter">
+											<td>
 
-												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-four.gif" alt="" height="68" width="115" />
+												<img src="https://raw.github.com/ladyheatherly/responsive-email/master/img-4-column.gif" alt="" height="68" width="115" />
 												<div class="spacer-sm">&nbsp;</div>
 												<div class="h4">H4 Header</div>
 												<div class="spacer-xs">&nbsp;</div>
 												<div class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-
 											</td>
 										</tr>
 									</table>
@@ -577,38 +547,22 @@
 							<tr>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<div class="sender">
-												Sender Name<br />
-												Sender Address<br />
-												Los Angeles, CA 90000
-												</div>
-												<div class="spacer-md">&nbsp;</div>
-												<div class="copyright">Copyright &copy; 2013</div>
-
-											</td>
-										</tr>
-									</table>
+									<div class="sender">
+									Sender Name<br />
+									Sender Address<br />
+									Los Angeles, CA 90000
+									</div>
+									<div class="spacer-md">&nbsp;</div>
+									<div class="copyright">Copyright &copy; 2013</div>
 
 								</td>
 								<td class="column">
 
-									<table border="0" cellpadding="0" cellspacing="0">
-										<tr>
-											<td class="gutter">
-
-												<div class="unsubscribe-text">
-												Unsubscribe message lorem ipsum dolor sit amet, consectetur adipiscing elit.
-												</div>
-												<div class="spacer-md">&nbsp;</div>
-												<div class="unsubscribe-link"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
-
-											</td>
-										</tr>
-									</table>
+									<div class="unsubscribe-text">
+									Unsubscribe message lorem ipsum dolor sit amet, consectetur adipiscing elit.
+									</div>
+									<div class="spacer-md">&nbsp;</div>
+									<div class="unsubscribe-link"><a href="[[UnsubscribeURL]]">Unsubscribe</a></div>
 
 								</td>
 							</tr>
