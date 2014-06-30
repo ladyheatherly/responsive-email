@@ -149,18 +149,22 @@
 	-----------------------------------------------------------------------------------------------------------
 	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 
+	.one-column { width:100%; }
 	.one-column .column { padding:10px; width:520px; }
 	.one-column .p { font-size:14px; line-height:20px; }
 	.one-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:310px; width:520px; }
 
+	.two-column { width:100%; }
 	.two-column .column { padding:10px; width:250px; }
 	.two-column .p { font-size:14px; line-height:18px; }
 	.two-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:147px; width:250px; }
 
+	.three-column { width:100%; }
 	.three-column .column { padding:10px; width:160px; }
 	.three-column .p { font-size:13px; line-height:16px; }
 	.three-column img { background:#CCCCCC; color:#FFFFFF; font-size:18px; font-weight:bold; height:110px; width:160px; }
 
+	.four-column { width:100%; }
 	.four-column .column { width:270px; }
 	.four-column .column td { padding:10px; width:115px; }
 	.four-column .p { font-size:13px; line-height:16px; }
@@ -219,7 +223,7 @@
 	}
 
 	@media only screen and (max-width: 479px) {
-		[class=three-column] [class=column] { display:block !important; width:96% !important; }
+		[class=three-column] [class=column] { display:block !important; overflow:auto !important; width:96% !important; }
 		[class=three-column] img { float:left !important; max-width:160px !important; width:37% !important; }
 		[class=three-column] [class=spacer-sm] { display:none !important; }
 		[class=three-column] [class=h3] { margin:0 0 10px 40% !important; }
